@@ -1,11 +1,16 @@
-PImage spritepers;
-int x =13,y =18 , ancho =220, alto=200;
+will personajemain;
+
+
+
+
 void setup(){
-  size(800, 600);
-  spritepers = loadImage("personaje1.png");
-  //image(spritepers,x,y, width, height);
-  copy(spritepers,x,y, ancho, alto, 0,0,ancho, alto);
+  size(1920, 1080);
+  personajemain = new will();
   
 }
 void draw(){
+  
+  background(0);
+  personajemain.dibujo();
+  personajemain.movimiento();
 }
