@@ -1,23 +1,26 @@
-RETRO PONG
+AGE Z
 ================
 
-**UN PONG RETRO**
 
-`PONG` es un programa que busca replicar las mecánicas del clásico juego de arcade `PONG` con un toque diferente.
+`AGE Z` es un juego `TOP AND DOWN` de supervivencia.
 
 ![./Captura1.PNG](./Captura1.PNG)
 
+### Resumen
+
+Encarna a Will un hombre destrozado por lo que ha traido la pandemia. La cosa empeora cuando una mañana se da cuenta
+de que su familia no está, se oyen ruidos en la casa. Algo no anda bien...
 
 ### Características
 
-- Controla el movimiento con las flechas de tu teclado y con W-A-S-D.
-- Oprime las diferentes teclas para reiniciar, pausar, continuar
+-
 
 
 Autores
 ----
 
-- Jhonathan Alexsander Murcia Galan 2191653 D2
+- Jhonathan Alexsander Murcia Galan 2191653 
+- Andres Felipe Araque Guerrero 2190443 
 
 
 **Estudiantes de Ingeniería Electrónica - Programación 1 GRUPO D2**
