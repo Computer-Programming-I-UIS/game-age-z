@@ -3,86 +3,79 @@ class will{
   
   
 //variables necesarias
-  PImage spritewill;
-  int willx = 6, willy = 8, anchosprite = 143, altosprite = 101; //coordenadas para tomar el sprite que se necesita
-  int arma = 0;
-  int poswillx = 15;
-  int poswilly = 15;
-  float x,y,vx,vy, rotation,speed,maxspeed, friction;
+  
+  int poswillx;         //posicion en x del will
+  int poswilly;         //posicion en y de will
+  float w,h, rotation,speed,maxspeed, friction; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
+  boolean cambiosprite; //variable para que cambie de sprite
   
   will(){
-    vx=0;
-    vy=0;
+    poswilly = height/2;   
+    poswillx = width/2;
     rotation=0;
     speed = 0;
-    maxspeed=3;
+    maxspeed=2;
     friction = 0.9;
-    //x=poswillx+61;
-    //y=poswilly+71;
+    w=138;
+    h=91;
   }
   
   
   
   void dibujo(){
-    fill(255);
-    ellipse(poswillx,poswilly,20,20);
     pushMatrix();
     translate(poswillx,poswilly);
     rotate(rotation);
-    spritewill = loadImage("personaje1.png");
-    copy(spritewill,willx,willy, anchosprite, altosprite, poswillx,poswilly,anchosprite, altosprite);
+    fill(255);
+    ellipse(poswillx,poswilly,20,20);
+    if(cambiosprite==true){
+      
+      image(spritewill1,-w/2,-h/2);
+    }else{
+      image(spritewill2,-w/2,-h/2);
+    }
     popMatrix(); 
     
     if(key == '1'){    
-        willx=6;
-        willy=8;
-        anchosprite=143;
-        altosprite=101;
+      cambiosprite=true;
+        
         
     }
-    if(key == '2'){     
-        willx=160;
-        willy=135;
-        anchosprite=304;
-        altosprite=221;
+    if(key == '2'){    
+      cambiosprite=false;
        
     }
-    if(key == '3'){     
-        willx=10;
-        willy=142;
-        anchosprite=140;
-        altosprite=245;
-       
-    }
-       
-      
+            
     
   }
   
   
   void movimiento(){
-    if (keyPressed && (key == CODED)){
+    if  (keyPressed && (key == CODED)){
       if (keyCode == LEFT && keyCode != RIGHT){             //si oprimo izquierda pero no derecha
-        rotation += -0.01;
+        rotation += -.05;
       }
       if (keyCode == RIGHT && keyCode != LEFT){
-        rotation += 0.01;
+        rotation += .05;
+      }
+      if (keyCode != RIGHT && keyCode != LEFT){
+        
+
       }
       if (keyCode == UP && keyCode != DOWN){
-        if (speed < maxspeed){speed += 0.1;}else{speed = maxspeed;}
+        if(speed < maxspeed){speed += 0.08;}else{speed=maxspeed;}
       }
       if (keyCode != UP && keyCode == DOWN){
-        if (speed < maxspeed){speed += -0.1;}else{speed = maxspeed;}
+        if(speed < -maxspeed){speed -= 0.08;}else{speed=-maxspeed;}
       }
       if (keyCode != UP && keyCode != DOWN){
-        if(speed>0){
+        if (speed>0 || speed <0){
           speed *= friction;
         }else{
           speed=0;
-        }
+        } 
       }
-    }
-    poswillx += cos(rotation)*speed;
+    }poswillx += cos(rotation)*speed;
     poswilly += sin(rotation)*speed;
   }
 }
