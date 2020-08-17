@@ -19,6 +19,7 @@ void draw(){
   background(0);
   personajemain.dibujo();
   personajemain.movimiento();
+  personajemain.limite();
   lvl1.fondo1();
 
 }

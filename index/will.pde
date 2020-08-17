@@ -78,4 +78,18 @@ class will{
     }poswillx = poswillx + int(cos(rotation)*speed);
     poswilly = poswilly + int(sin(rotation)*speed);
   }
+  void limite(){//metodo limites de pantalla para will
+    if(poswillx>width-60){
+      poswillx= width-60;
+    }
+    if(poswillx<60){
+      poswillx= 60;
+    }
+     if(poswilly>height-60){
+      poswilly= height-60;
+    }
+     if(poswilly<60){
+      poswilly= 60;
+    }
+  }
 }
