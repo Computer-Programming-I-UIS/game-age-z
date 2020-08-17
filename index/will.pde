@@ -21,7 +21,7 @@ class will{
   }
   
   
-  
+ 
   void dibujo(){
     pushMatrix();
     translate(poswillx,poswilly);
