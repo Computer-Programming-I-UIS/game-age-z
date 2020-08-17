@@ -13,6 +13,7 @@
      
    }
  void fondo1(){
+   stroke (0);
    for(int i=0;i<=width;i+=40){//bucle para dibujo de cada una de las paredes
        fill(206,113,52);
        rect(i,0,ancho1,alto1);
@@ -29,11 +30,13 @@
        fill(206,113,52);
        rect(i,height-40,ancho1,alto1);
      }
+     mesas(200,255);
+     mesas(800,500);
     
   }
   
-  void mesas(int xm,int ym){
-    rect(xm,ym,70,70);
+  void mesas(int xm,int ym){//funcion dibujo de mesas
+    image(spritemesa,xm,ym,150,150);
   }
   
  }

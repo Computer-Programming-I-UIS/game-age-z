@@ -2,6 +2,7 @@ will personajemain; //objeto del personaje
 fondo lvl1; //objeto para dibujar fondo lvl 1
 PImage spritewill1; //primer sprite
 PImage spritewill2; //segundo sprite
+PImage spritemesa;
 
 
 
@@ -10,6 +11,7 @@ void setup(){
   //imageMode(CENTER);
   spritewill1 =  loadImage("1.png");  //cargar imagen
   spritewill2 =  loadImage("3.png");  
+  spritemesa = loadImage("mesa.png");
   personajemain = new will();
  lvl1 = new fondo();
   
