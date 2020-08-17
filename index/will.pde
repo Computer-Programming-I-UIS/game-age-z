@@ -14,7 +14,7 @@ class will{
     poswillx = width/2;
     rotation=0;
     speed = 0;
-    maxspeed=2;
+    maxspeed=2.5;
     friction = 0.9;
     w=138;
     h=91;
@@ -63,10 +63,10 @@ class will{
 
       }
       if (keyCode == UP && keyCode != DOWN){
-        if(speed < maxspeed){speed += 0.08;}else{speed=maxspeed;}
+        if(speed < maxspeed){speed += 0.1;}else{speed=maxspeed;}
       }
       if (keyCode != UP && keyCode == DOWN){
-        if(speed < -maxspeed){speed -= 0.08;}else{speed=-maxspeed;}
+        if(speed < -maxspeed){speed -= 0.1;}else{speed=-maxspeed;}
       }
       if (keyCode != UP && keyCode != DOWN){
         if (speed>0 || speed <0){
@@ -75,7 +75,7 @@ class will{
           speed=0;
         } 
       }
-    }poswillx += cos(rotation)*speed;
-    poswilly += sin(rotation)*speed;
+    }poswillx = poswillx + int(cos(rotation)*speed);
+    poswilly = poswilly + int(sin(rotation)*speed);
   }
 }
