@@ -10,7 +10,8 @@ class will{
   int ye = height/2;
   float w,h, rotation,speed,maxspeed, friction; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
   boolean cambiosprite; //variable para que cambie de sprite
-  
+  float xz,yz;//variables zombie
+  float perseguidor = 0.015;// variable para velocidad de perseguidor
   
   will(){
     poswilly = height/2;   
@@ -21,12 +22,18 @@ class will{
     friction = 0.5;
     w=138;
     h=91;
+    xz=800;
+    yz=400;
   }
   
   
  
   void dibujo(){
     ellipse(poswillx,poswilly,20,20);
+    
+    xz+= (poswillx -xz)*perseguidor;// persigue will
+    yz+= (poswilly -yz)*perseguidor;//persigue will
+    image(zombie,xz,yz,100,100);//dibujo zombie
     pushMatrix();
     translate(poswillx,poswilly);
     
