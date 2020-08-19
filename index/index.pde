@@ -40,7 +40,7 @@ void draw(){
       personajemain.dibujo();
       personajemain.movimiento();
       personajemain.limite();
-      lvl1.fondo1();
+     
   }
 }
 

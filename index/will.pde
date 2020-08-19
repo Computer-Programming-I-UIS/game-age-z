@@ -36,21 +36,21 @@ class will{
  
   void dibujo(){
     ellipse(poswillx,poswilly,20,20);
-    
+    //zombie1
     xz+= (poswillx -xz)*perseguidor;// persigue will
     yz+= (poswilly -yz)*perseguidor;//persigue will
     image(zombie,xz,yz,100,100);//dibujo zombie
-    
+    //zombie2
     xz1+= (poswillx -xz1)*perseguidor;// persigue will
     yz1+= (poswilly -yz1)*perseguidor;//persigue will
     image(zombie,xz1,yz1,100,100);//dibujo zombie
     
-    
+    //zombie3
     xz2+= (poswillx -xz2)*perseguidor;// persigue will
     yz2+= (poswilly -yz2)*perseguidor;//persigue will
     image(zombie,xz2,yz2,100,100);//dibujo zombie
     
-    
+    //zombie 4
     xz3+= (poswillx -xz3)*perseguidor;// persigue will
     yz3+= (poswilly -yz3)*perseguidor;//persigue will
     image(zombie,xz3,yz3,100,100);//dibujo zombie
