@@ -12,6 +12,10 @@
      alto2=40;//alto paredes verticales
      
    }
+   
+ void menu(){
+   background(menuini);
+ }  
  void fondo1(){
    stroke (0);
    for(int i=0;i<=width;i+=40){//bucle para dibujo de cada una de las paredes
