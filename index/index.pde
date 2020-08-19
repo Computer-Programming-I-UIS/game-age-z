@@ -36,7 +36,6 @@ void draw(){
       personajemain.dibujo();
       personajemain.movimiento();
       personajemain.limite();
-    // personajemain.zombie();
       lvl1.fondo1();
   }
 }

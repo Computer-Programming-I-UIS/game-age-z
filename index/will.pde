@@ -6,11 +6,11 @@ class will{
   
   int poswillx;         //posicion en x del will
   int poswilly;         //posicion en y de will
+  int xe = width/2;
+  int ye = height/2;
   float w,h, rotation,speed,maxspeed, friction; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
   boolean cambiosprite; //variable para que cambie de sprite
-  float zx = poswillx,zy = poswilly; //variables para que el zombie persiga
-  int x1 =1000, y1 =400;// variables ubicacion zombie
-   float perseguidor = 0.015;// variable para velocidad de perseguidor
+  
   
   will(){
     poswilly = height/2;   
@@ -26,12 +26,13 @@ class will{
   
  
   void dibujo(){
+    ellipse(poswillx,poswilly,20,20);
     pushMatrix();
     translate(poswillx,poswilly);
     
     rotate(rotation);
     fill(255);
-    ellipse(poswillx,poswilly,20,20);
+    
     if(cambiosprite==true){
       
       image(spritewill1,-w/2,-h/2);
@@ -57,6 +58,7 @@ class will{
   void movimiento(){
     if  (keyPressed && (key == CODED)){
       if (keyCode == LEFT && keyCode != RIGHT){             //si oprimo izquierda pero no derecha
+        
         rotation += -.05;
       }
       if (keyCode == RIGHT && keyCode != LEFT){
@@ -68,6 +70,7 @@ class will{
       }
       if (keyCode == UP && keyCode != DOWN){
         if(speed < maxspeed){speed += 1;}else{speed=maxspeed;}
+        
       }
       if (keyCode != UP && keyCode == DOWN){
         if(speed < -maxspeed){speed -= 1;}else{speed=-maxspeed;}
@@ -82,6 +85,9 @@ class will{
     }poswillx = poswillx + int(cos(rotation)*speed);
     poswilly = poswilly + int(sin(rotation)*speed);
   }
+  
+  
+  
   void limite(){//metodo limites de pantalla para will
     if(poswillx>width-60){
       poswillx= width-60;
@@ -95,10 +101,5 @@ class will{
      if(poswilly<60){
       poswilly= 60;
     }
-  }
-  void zombie(){
-              x1+= (zx - x1) * perseguidor;
-         y1+= (zy - y1) * perseguidor; 
-         image(zombie,x1-50,y1-40,80,80);
   }
 }
