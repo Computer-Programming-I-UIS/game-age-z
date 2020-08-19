@@ -27,8 +27,12 @@ void setup(){
 void draw(){
   
   lvl1.menu();
-  if(mouseY >= 455 && mouseY < 506 && mouseX >= 233 && mouseX < 583 && (mousePressed == true)){
-    cambiofondo=1;
+  if(mouseY >= 455 && mouseY < 506 && mouseX >= 233 && mouseX < 583  ){
+    cursor(HAND);
+    if(mousePressed == true){
+    cambiofondo=1;}
+  }else{
+   cursor(ARROW); 
   }
   switch(cambiofondo){
     case 1:

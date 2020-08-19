@@ -11,7 +11,7 @@ class will{
   float w,h, rotation,speed,maxspeed, friction; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
   boolean cambiosprite; //variable para que cambie de sprite
   float xz,yz;//variables zombie
-  float perseguidor = 0.015;// variable para velocidad de perseguidor
+  float perseguidor = 0.005;// variable para velocidad de perseguidor
   
   will(){
     poswilly = height/2;   
@@ -43,8 +43,15 @@ class will{
     if(cambiosprite==true){
       
       image(spritewill1,-w/2,-h/2);
+      stroke(255,100);
+      strokeWeight(10);
+       line (50,20,600,0);//bibujo linea guia para el disparo
     }else{
       image(spritewill2,-w/2,-h/2);
+      stroke(255,100);
+      strokeWeight(10);
+       line (50,20,200,0);
+    
     }
     popMatrix(); 
     
