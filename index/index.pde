@@ -5,6 +5,7 @@ PImage spritewill2; //segundo sprite
 PImage spritemesa;
 PImage menuini;
 PImage zombie;
+PImage fondo1;
 int cambiofondo = 0;
 
 
@@ -18,6 +19,7 @@ void setup(){
   spritewill2 =  loadImage("3.png");  
   spritemesa = loadImage("mesa.png");
   menuini = loadImage("inicio.png");
+  fondo1 = loadImage("fondo1.jpg");
   zombie = loadImage("zombie.png");
   personajemain = new will();
   lvl1 = new fondo();
@@ -36,7 +38,7 @@ void draw(){
   }
   switch(cambiofondo){
     case 1:
-      background(0);
+      background(fondo1);
       personajemain.dibujo();
       personajemain.movimiento();
       personajemain.limite();
