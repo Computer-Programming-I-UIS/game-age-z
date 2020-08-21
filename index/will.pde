@@ -41,18 +41,18 @@ class will{
     yz+= (poswilly -yz)*perseguidor;//persigue will
     image(zombie,xz,yz,100,100);//dibujo zombie
     //zombie2
-    xz1+= (poswillx -xz1)*perseguidor;// persigue will
-    yz1+= (poswilly -yz1)*perseguidor;//persigue will
+    xz1+= (poswillx -xz1)*0.01;// persigue will
+    yz1+= (poswilly -yz1)*0.01;//persigue will
     image(zombie,xz1,yz1,100,100);//dibujo zombie
     
     //zombie3
-    xz2+= (poswillx -xz2)*perseguidor;// persigue will
-    yz2+= (poswilly -yz2)*perseguidor;//persigue will
+    xz2+= (poswillx -xz2)*0.008;// persigue will
+    yz2+= (poswilly -yz2)*0.008;//persigue will
     image(zombie,xz2,yz2,100,100);//dibujo zombie
     
     //zombie 4
-    xz3+= (poswillx -xz3)*perseguidor;// persigue will
-    yz3+= (poswilly -yz3)*perseguidor;//persigue will
+    xz3+= (poswillx -xz3)*0.015;// persigue will
+    yz3+= (poswilly -yz3)*0.015;//persigue will
     image(zombie,xz3,yz3,100,100);//dibujo zombie
     
     
@@ -65,14 +65,22 @@ class will{
     if(cambiosprite==true){
       
       image(spritewill1,-w/2,-h/2);
+      if (keyPressed){
+        if((key== 'x')||(key=='X')){
       stroke(255,100);
       strokeWeight(10);
        line (50,20,600,0);//bibujo linea guia para el disparo
+        }
+      }
     }else{
       image(spritewill2,-w/2,-h/2);
+      if (keyPressed){
+        if((key== 'x')||(key=='X')){
       stroke(255,100);
       strokeWeight(10);
        line (50,20,200,0);
+        }
+      }
     
     }
     popMatrix(); 
