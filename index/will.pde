@@ -37,24 +37,54 @@ class will{
   void dibujo(){
     ellipse(poswillx,poswilly,20,20);
     //zombie1
+    if(poswillx >= xz){
     xz+= (poswillx -xz)*perseguidor;// persigue will
     yz+= (poswilly -yz)*perseguidor;//persigue will
     image(zombie,xz,yz,100,100);//dibujo zombie
     //zombie2
+    }
+     else if(poswillx < xz){
+        xz+= (poswillx -xz)*perseguidor;// persigue will
+    yz+= (poswilly -yz)*perseguidor;//persigue will
+    image(zombie1,xz,yz,100,100);//dibujo zombie
+     }
+     if(poswillx >= xz1){
     xz1+= (poswillx -xz1)*0.01;// persigue will
     yz1+= (poswilly -yz1)*0.01;//persigue will
     image(zombie,xz1,yz1,100,100);//dibujo zombie
-    
+     }
+      else if(poswillx < xz1){
+     //zombie2
+    xz1+= (poswillx -xz1)*0.01;// persigue will
+    yz1+= (poswilly -yz1)*0.01;//persigue will
+    image(zombie1,xz1,yz1,100,100);//dibujo zombie
+      }
+      if(poswillx >= xz2){
     //zombie3
     xz2+= (poswillx -xz2)*0.008;// persigue will
     yz2+= (poswilly -yz2)*0.008;//persigue will
     image(zombie,xz2,yz2,100,100);//dibujo zombie
-    
+      }
+       else if(poswillx < xz2){
+       //zombie3
+    xz2+= (poswillx -xz2)*0.008;// persigue will
+    yz2+= (poswilly -yz2)*0.008;//persigue will
+    image(zombie1,xz2,yz2,100,100);//dibujo zombie
+       }
+    if(poswillx >= xz3){
     //zombie 4
     xz3+= (poswillx -xz3)*0.015;// persigue will
     yz3+= (poswilly -yz3)*0.015;//persigue will
     image(zombie,xz3,yz3,100,100);//dibujo zombie
     
+    }
+    else if(poswillx < xz3){
+    //zombie 4
+    xz3+= (poswillx -xz3)*0.015;// persigue will
+    yz3+= (poswilly -yz3)*0.015;//persigue will
+    image(zombie1,xz3,yz3,100,100);//dibujo zombie
+    }
+  
     
     pushMatrix();
     translate(poswillx,poswilly);
@@ -145,5 +175,21 @@ class will{
      if(poswilly<60){
       poswilly= 60;
     }
+    //mesa
+   /* if((poswillx >=200)&&(poswilly >=156)&&(poswillx<=432)){//limites para la mesa
+      poswilly= 150;
+    }
+    else if((poswillx>=200)&&(poswilly<=293)&&(poswillx<=432)){
+      poswilly= 300;
+      
+    }
+    if((poswillx>=200)&&(poswilly>=151)&&(poswilly<=291)){
+      poswillx=195;
+    }
+    if((poswillx<=432)&&(poswilly>=152)&&(poswilly<=290)){
+      poswillx=440;
+    }*/
+    
+    
   }
 }

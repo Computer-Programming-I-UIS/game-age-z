@@ -6,6 +6,7 @@ PImage spritemesa;
 PImage menuini;
 PImage zombie;
 PImage fondo1;
+PImage zombie1;
 int cambiofondo = 0;
 
 
@@ -21,6 +22,7 @@ void setup(){
   menuini = loadImage("inicio.png");
   fondo1 = loadImage("fondo1.jpg");
   zombie = loadImage("zombie.png");
+  zombie1= loadImage("zombie1.png");
   personajemain = new will();
   lvl1 = new fondo();
   
