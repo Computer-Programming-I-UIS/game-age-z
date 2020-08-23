@@ -6,8 +6,9 @@ PImage menuini;
 PImage zombie;
 PImage fondo1;
 PImage zombie1;
+PImage historia;
 int cambiofondo = 0;
-
+boolean botonplay = false;
 
 
 
@@ -18,6 +19,7 @@ void setup(){
   spritewill1 =  loadImage("1.png");  //cargar imagen
   spritewill2 =  loadImage("3.png");  
   menuini = loadImage("inicio.png");
+  historia = loadImage("historia.png");
   fondo1 = loadImage("fondo1.jpg");
   zombie = loadImage("zombie.png");
   zombie1= loadImage("zombie1.png");
@@ -31,20 +33,44 @@ void draw(){
   lvl1.menu();
   if(mouseY >= 455 && mouseY < 506 && mouseX >= 233 && mouseX < 583  ){
     cursor(HAND);
-    if(mousePressed == true){
-    cambiofondo=1;}
-  }else{
+  }
+  else{
    cursor(ARROW); 
   }
-  switch(cambiofondo){
+  
+  
+  if (botonplay){
+    lvl1.historias();
+  }else{
+  }
+  
+  
+  
+  
+  
+  /*switch(cambiofondo){
+    
     case 1:
+      lvl1.historias();
+      
+    case 2:
       background(fondo1);
       personajemain.dibujo();
       personajemain.movimiento();
       personajemain.limite();
      
-  }
+  }*/
 }
+
+void mousePressed(){
+  if(mouseY >= 455 && mouseY < 506 && mouseX >= 233 && mouseX < 583  ){
+      botonplay = true;
+  }
+  else{
+    botonplay =false;
+  }
+}  
+
 
 
 
