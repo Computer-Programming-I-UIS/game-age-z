@@ -2,7 +2,6 @@ will personajemain; //objeto del personaje
 fondo lvl1; //objeto para dibujar fondo lvl 1
 PImage spritewill1; //primer sprite
 PImage spritewill2; //segundo sprite
-PImage spritemesa;
 PImage menuini;
 PImage zombie;
 PImage fondo1;
@@ -18,7 +17,6 @@ void setup(){
   //imageMode(CENTER);
   spritewill1 =  loadImage("1.png");  //cargar imagen
   spritewill2 =  loadImage("3.png");  
-  spritemesa = loadImage("mesa.png");
   menuini = loadImage("inicio.png");
   fondo1 = loadImage("fondo1.jpg");
   zombie = loadImage("zombie.png");

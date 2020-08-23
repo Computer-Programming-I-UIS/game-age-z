@@ -176,20 +176,30 @@ class will{
       poswilly= 60;
     }
     //mesa
-   /* if((poswillx >=200)&&(poswilly >=156)&&(poswillx<=432)){//limites para la mesa
+    if((poswillx >=210)&&(poswilly >=156)&&(poswillx<=442)&&(poswilly <200)){//limites para la mesa
       poswilly= 150;
     }
-    else if((poswillx>=200)&&(poswilly<=293)&&(poswillx<=432)){
+    else if((poswillx>=200)&&(poswilly<=293)&&(poswillx<=422)&&(poswilly >240)){
       poswilly= 300;
       
     }
-    if((poswillx>=200)&&(poswilly>=151)&&(poswilly<=291)){
+    if((poswillx>=200)&&(poswilly>=151)&&(poswilly<=291)&&(poswillx<250)){
       poswillx=195;
     }
-    if((poswillx<=432)&&(poswilly>=152)&&(poswilly<=290)){
+    if((poswillx<=442)&&(poswilly>=148)&&(poswilly<=290)&&(poswillx>380)){
       poswillx=440;
-    }*/
+    }
+    //piano
+    if((poswillx>=565)&&(poswillx<615)&&(poswilly>=0)&&(poswilly<115)){
+      poswillx= 565;
+    }
+    if((poswillx>=570)&&(poswilly<115)&&(poswillx<=810)){
+      poswilly=117;
+    }
     
+    if((poswillx<=820)&&(poswillx>750)&&(poswilly<115)){
+      
+    }
     
   }
 }
