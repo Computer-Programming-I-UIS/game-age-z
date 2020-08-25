@@ -9,8 +9,8 @@ PImage zombie1;
 PImage historia;
 int cambiofondo = 0;
 boolean botonplay = false;
-
-
+boolean botoncredi = false;
+boolean botonsalir = false;
 
 void setup(){
   
@@ -31,35 +31,25 @@ void setup(){
 void draw(){
   
   lvl1.menu();
-  if(mouseY >= 455 && mouseY < 506 && mouseX >= 233 && mouseX < 583  ){
-    cursor(HAND);
-  }
-  else{
-   cursor(ARROW); 
-  }
-  
-  
+ 
   if (botonplay){
     lvl1.historias();
   }else{
   }
   
   
+  if (botoncredi){
+    lvl1.creditos();
+  }else{
+  }
   
   
+  if (botonsalir){
+    lvl1.salir();
+  }else{
+  }
   
-  /*switch(cambiofondo){
-    
-    case 1:
-      lvl1.historias();
-      
-    case 2:
-      background(fondo1);
-      personajemain.dibujo();
-      personajemain.movimiento();
-      personajemain.limite();
-     
-  }*/
+  
 }
 
 void mousePressed(){
@@ -68,6 +58,18 @@ void mousePressed(){
   }
   else{
     botonplay =false;
+  }
+  if(mouseY >= 565 && mouseY < 617 && mouseX >= 312 && mouseX < 461  ){
+      botoncredi = true;
+  }
+  else{
+    botoncredi =false;
+  }
+  if(mouseY >= 648 && mouseY < 700 && mouseX >= 330 && mouseX < 440  ){
+      botonsalir = true;
+  }
+  else{
+    botonsalir =false;
   }
 }  
 
