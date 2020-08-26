@@ -12,7 +12,7 @@ class will{
   boolean cambiosprite; //variable para que cambie de sprite
   float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3;//variables zombie
   float perseguidor = 0.005;// variable para velocidad de perseguidor
-  boolean b1,b2,b3,b4;
+  
   
   will(){
     poswilly = height/2;   
@@ -105,62 +105,33 @@ class will{
   
   
   void movimiento(){
-    if  (keyPressed ){
-      if ((key=='A')||(key=='a')){             //si oprimo izquierda pero no derecha
-        if(cambiosprite==true){
-      
-      image(will2,poswillx,poswilly,w,h);
-      
-        }
-      
-    else{
-      image(spritewill2,poswillx,poswilly,w,h);
-      
+    if (left && !right){
+     //rotation += -1; 
+     rotation += -.1; 
     }
-        poswillx-=5;
-      }
-      if ((key=='D')||(key=='d')){
-         if(cambiosprite==true){
-      
-      image(spritewill1,poswillx,poswilly,w,h);
-      
-        }
-      
-    else{
-      image(spritewill2,poswillx,poswilly,w,h);
-      
+    if (right && !left) {
+      //rotation += 1;
+      rotation += .1;
+    }
+    if (!left && !right){
+      //rotation = 0;
     }
     
-        poswillx+=5;
-      }
-      
-      if ((key=='W')||(key=='w')){
-       if(cambiosprite==true){
-      
-      image(will3,poswillx,poswilly,h,w);
-      
-        }
-      
-    else{
-      image(spritewill2,poswillx,poswilly,w,h);
-      
+    if (up && !down){
+     if (speed<maxSpeed){
+       speed+=0.2;
+     }else{
+       speed=maxSpeed;
+     }
     }
-        poswilly-=5;
-        
-      }
-      if ((key=='S')||(key=='s')){
-      
-         if(cambiosprite==true){
-      
-      image(will1,poswillx,poswilly,h,w);
-      
-        }
-      
-    else{
-      image(spritewill2,poswillx,poswilly,w,h);
-      
+    if (down && !up) {
+      //
     }
-      poswilly+=5;
+    if (!up && !down){
+      if (speed>0){
+        speed *= friction;
+      }else{
+        speed = 0;
       }
     }
       

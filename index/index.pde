@@ -14,6 +14,7 @@ int cambiofondo = 0;
 boolean botonplay = false;
 boolean botoncredi = false;
 boolean botonsalir = false;
+boolean left, right, up, down;
 
 void setup(){
   
@@ -31,7 +32,10 @@ void setup(){
   zombie1= loadImage("zombie1.png");
   personajemain = new will();
   lvl1 = new fondo();
-  
+  left = false;
+  right = false;
+  up = false;
+  down = false;
   
 }
 void draw(){
@@ -78,6 +82,38 @@ void mousePressed(){
     botonsalir =false;
   }
 }  
+void keyPressed() {
+  switch (keyCode) {
+  case 37://left
+    left = true;
+    break;
+  case 39://right
+    right = true;
+    break;
+  case 38://up
+    up = true;
+    break;
+  case 40://down
+    down = true;
+    break;
+  }
+}
+void keyReleased() {
+  switch (keyCode) {
+  case 37://left
+    left = false;
+    break;
+  case 39://right
+    right = false;
+    break;
+  case 38://up
+    up = false;
+    break;
+  case 40://down
+    down = false;
+    break;
+  }
+}
 
 
 
