@@ -35,30 +35,35 @@ class will{
     ellipse(poswillx,poswilly,20,20);
     //zombie1
     if(xz>=3000){
+      imageMode(CORNER);
       image(zombie,6000,yz,100,100);//dibujo zombie
     }
     else{
     if(poswillx >= xz){
     xz+= (poswillx -xz)*perseguidor;// persigue will
     yz+= (poswilly -yz)*perseguidor;//persigue will
+    imageMode(CORNER);
     image(zombie,xz,yz,100,100);//dibujo zombie
     //zombie2
     }
      else if(poswillx < xz){
         xz+= (poswillx -xz)*perseguidor;// persigue will
     yz+= (poswilly -yz)*perseguidor;//persigue will
+    imageMode(CORNER);
     image(zombie1,xz,yz,100,100);//dibujo zombie
      }
     }
      if(poswillx >= xz1){
     xz1+= (poswillx -xz1)*0.01;// persigue will
     yz1+= (poswilly -yz1)*0.01;//persigue will
+    imageMode(CORNER);
     image(zombie,xz1,yz1,100,100);//dibujo zombie
      }
       else if(poswillx < xz1){
      //zombie2
     xz1+= (poswillx -xz1)*0.01;// persigue will
     yz1+= (poswilly -yz1)*0.01;//persigue will
+    imageMode(CORNER);
     image(zombie1,xz1,yz1,100,100);//dibujo zombie
       }
       if(poswillx >= xz2){
@@ -71,12 +76,14 @@ class will{
        //zombie3
     xz2+= (poswillx -xz2)*0.008;// persigue will
     yz2+= (poswilly -yz2)*0.008;//persigue will
+    imageMode(CORNER);
     image(zombie1,xz2,yz2,100,100);//dibujo zombie
        }
     if(poswillx >= xz3){
     //zombie 4
     xz3+= (poswillx -xz3)*0.015;// persigue will
     yz3+= (poswilly -yz3)*0.015;//persigue will
+    imageMode(CORNER);
     image(zombie,xz3,yz3,100,100);//dibujo zombie
     
     }
@@ -84,6 +91,7 @@ class will{
     //zombie 4
     xz3+= (poswillx -xz3)*0.015;// persigue will
     yz3+= (poswilly -yz3)*0.015;//persigue will
+    imageMode(CORNER);
     image(zombie1,xz3,yz3,100,100);//dibujo zombie
     }
   
@@ -122,10 +130,12 @@ class will{
           if((key=='x')||(key=='X')){
         fill(255,100);
         noStroke();
-        rect(poswillx-50,poswilly-25,-300,15);
+        
+        ellipse(poswillx-300,poswilly-25, 10,10);
+        ellipse(xz,yz, 10,10);
           }
         }
-        if ((xz+100<=poswillx-50)&&(xz+100>=poswillx-300)&&(yz>=poswilly-25)&&(yz<=poswilly-10)){
+        if ((xz<poswillx-300)&&(xz+100>poswillx-300)&&(yz<poswilly-25)&&(yz+100>poswilly-25)){
           xz=6000;
         }
         break;
@@ -138,7 +148,12 @@ class will{
         strokeCap(ROUND);
         strokeJoin(ROUND);
         noStroke();
-        rect(poswillx+50,poswilly+20,300,15);
+        
+         ellipse(poswillx+200,poswilly+20, 10,10);
+         ellipse(xz,yz, 10,10);
+         if ((xz<poswillx+200)&&(xz+100>poswillx+200)&&(yz<poswilly)&&(yz+100>poswilly)){
+          xz=6000;
+        }
           }
         }
         break;
@@ -150,7 +165,11 @@ class will{
         strokeCap(ROUND);
         strokeJoin(ROUND);
         noStroke();
-        rect(poswillx+20,poswilly-50,15,-300);
+         ellipse(poswillx+20,poswilly-300, 10,10);
+         ellipse(xz,yz, 10,10);
+         if ((xz<poswillx+20)&&(xz+100>poswillx+20)&&(yz<poswilly-300)&&(yz+100>poswilly-300)){
+          xz=6000;
+        }
           }
         }
         break;
@@ -162,7 +181,12 @@ class will{
         strokeCap(ROUND);
         strokeJoin(ROUND);
         noStroke();
-        rect(poswillx-20,poswilly+50,15,300);
+        
+        ellipse(poswillx-20,poswilly+300, 10,10);
+         ellipse(xz,yz, 10,10);
+         if ((xz<poswillx-20)&&(xz+100>poswillx-20)&&(yz<poswilly+300)&&(yz+100>poswilly+300)){
+          xz=6000;
+        }
           }
         }
         break;
