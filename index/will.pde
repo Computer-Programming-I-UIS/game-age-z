@@ -6,9 +6,8 @@ class will{
   
   int poswillx;         //posicion en x del will
   int poswilly;         //posicion en y de will
-  int xe = width/2;
-  int ye = height/2;
-  float w,h, rotation,speed,maxspeed, friction; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
+ 
+  float w,h; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
   int cambiosprite =1; //variable para que cambie de sprite
   float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3;//variables zombie
   float perseguidor = 0.005;// variable para velocidad de perseguidor
@@ -18,10 +17,6 @@ class will{
   will(){
     poswilly = height/2;   
     poswillx = width/2;
-    rotation=0;
-    speed = 0;
-    maxspeed=5;
-    friction = 0.5;
     w=138;
     h=91;
     xz=800;
@@ -39,6 +34,10 @@ class will{
   void dibujo(){
     ellipse(poswillx,poswilly,20,20);
     //zombie1
+    if(xz>=3000){
+      image(zombie,6000,yz,100,100);//dibujo zombie
+    }
+    else{
     if(poswillx >= xz){
     xz+= (poswillx -xz)*perseguidor;// persigue will
     yz+= (poswilly -yz)*perseguidor;//persigue will
@@ -50,6 +49,7 @@ class will{
     yz+= (poswilly -yz)*perseguidor;//persigue will
     image(zombie1,xz,yz,100,100);//dibujo zombie
      }
+    }
      if(poswillx >= xz1){
     xz1+= (poswillx -xz1)*0.01;// persigue will
     yz1+= (poswilly -yz1)*0.01;//persigue will
@@ -118,15 +118,53 @@ class will{
     switch(cambiosprite){
       case 1:
         image(will2,poswillx,poswilly,138,91);
+        if(keyPressed){
+          if((key=='x')||(key=='X')){
+        fill(255,100);
+        noStroke();
+        rect(poswillx-50,poswilly-25,-300,15);
+          }
+        }
+        if ((xz+100<=poswillx-50)&&(xz+100>=poswillx-300)&&(yz>=poswilly-25)&&(yz<=poswilly-10)){
+          xz=6000;
+        }
         break;
       case 2:
         image(spritewill1,poswillx,poswilly,138,91);
+        if(keyPressed){
+          if((key=='x')||(key=='X')){
+        fill(255,100);
+        
+        strokeCap(ROUND);
+        strokeJoin(ROUND);
+        noStroke();
+        rect(poswillx+50,poswilly+20,300,15);
+          }
+        }
         break;
         case 3:
         image(will3,poswillx,poswilly,91,138);
+        if(keyPressed){
+          if((key=='x')||(key=='X')){
+        fill(255,100);
+        strokeCap(ROUND);
+        strokeJoin(ROUND);
+        noStroke();
+        rect(poswillx+20,poswilly-50,15,-300);
+          }
+        }
         break;
         case 4:
         image(will1,poswillx,poswilly,91,138);
+        if(keyPressed){
+          if((key=='x')||(key=='X')){
+        fill(255,100);
+        strokeCap(ROUND);
+        strokeJoin(ROUND);
+        noStroke();
+        rect(poswillx-20,poswilly+50,15,300);
+          }
+        }
         break;
     }
     //image(spritewill1,poswillx,poswilly,138,91);
