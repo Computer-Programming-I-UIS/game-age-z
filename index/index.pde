@@ -1,3 +1,7 @@
+import ddf.minim.*;
+
+Minim minim;
+AudioPlayer s1;
 will personajemain; //objeto del personaje
 fondo lvl1; //objeto para dibujar fondo lvl 1
 PImage spritewill1; //primer sprite
@@ -38,10 +42,12 @@ void setup(){
   right = false;
   up = false;
   down = false;
+  minim = new Minim(this);
+  s1 = minim.loadFile("s1.mpeg");
   
 }
 void draw(){
-  
+  s1.play();
   lvl1.menu();
  
   if (botonplay){
