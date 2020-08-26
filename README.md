@@ -5,6 +5,9 @@ AGE Z
 `AGE Z` es un juego `TOP AND DOWN` de supervivencia.
 
 ![./Captura1.PNG](./Captura1.PNG)
+![./Captura2.PNG](./Captura2.PNG)
+![./Captura3.PNG](./Captura3.PNG)
+![./Captura4.PNG](./Captura4.PNG)
 
 ### Resumen
 
