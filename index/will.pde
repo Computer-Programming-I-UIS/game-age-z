@@ -280,9 +280,11 @@ class will{
     //image(spritewill1,poswillx,poswilly,138,91);
 
   
-  void keyPressed(){
-    
-    
+  void die(){
+    ellipse(poswillx,poswilly,50,50);
+    if ((xz<=poswillx-50)&&(xz>=poswillx+50)&&){
+      
+    }
   }
   
   
