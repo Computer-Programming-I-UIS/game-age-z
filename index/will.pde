@@ -9,9 +9,10 @@ class will{
   int xe = width/2;
   int ye = height/2;
   float w,h, rotation,speed,maxspeed, friction; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
-  boolean cambiosprite; //variable para que cambie de sprite
+  int cambiosprite =1; //variable para que cambie de sprite
   float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3;//variables zombie
   float perseguidor = 0.005;// variable para velocidad de perseguidor
+  
   
   
   will(){
@@ -89,15 +90,7 @@ class will{
    
     fill(255); 
     
-    if(key == '1'){    
-      cambiosprite=true;
-        
-        
-    }
-    if(key == '2'){    
-      cambiosprite=false;
-       
-    }
+    
   }
             
     
@@ -105,35 +98,38 @@ class will{
   
   
   void movimiento(){
-    if (left && !right){
-     //rotation += -1; 
-     rotation += -.1; 
-    }
-    if (right && !left) {
-      //rotation += 1;
-      rotation += .1;
-    }
-    if (!left && !right){
-      //rotation = 0;
-    }
-    
-    if (up && !down){
-     if (speed<maxSpeed){
-       speed+=0.2;
-     }else{
-       speed=maxSpeed;
-     }
-    }
-    if (down && !up) {
-      //
-    }
-    if (!up && !down){
-      if (speed>0){
-        speed *= friction;
-      }else{
-        speed = 0;
+    if(keyPressed && (key==CODED)){
+      if (keyCode == LEFT){
+        poswillx -= 7;
+        cambiosprite=1;
+        
+      }else if(keyCode == RIGHT){
+        poswillx +=7;
+        cambiosprite=2;
       }
+      if(keyCode ==UP){
+        poswilly -=7;
+        cambiosprite=3;
+      }else if(keyCode == DOWN){
+        poswilly += 7;
+        cambiosprite=4;
+      }
+    }imageMode(CENTER);
+    switch(cambiosprite){
+      case 1:
+        image(will2,poswillx,poswilly,138,91);
+        break;
+      case 2:
+        image(spritewill1,poswillx,poswilly,138,91);
+        break;
+        case 3:
+        image(will3,poswillx,poswilly,91,138);
+        break;
+        case 4:
+        image(will1,poswillx,poswilly,91,138);
+        break;
     }
+    //image(spritewill1,poswillx,poswilly,138,91);
       
   }
   void keyPressed(){
