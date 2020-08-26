@@ -67,7 +67,7 @@ class fondo{
     text("Dawn dawns and Will does not see his family",38,ytext+n*11);
     text("hear a noise in the kitchen",38,ytext+n*12);
     text("What is happening?",40,ytext+n*14);
-    ytext=ytext-50;
+    ytext=ytext-55;
     if (ytext+n*13<-20){
       nivel1();
     }
@@ -75,6 +75,9 @@ class fondo{
  
  void nivel1(){
    background(fondo1);
+   personajemain.dibujo();
+   personajemain.movimiento();
+   personajemain.limite();
  }
   
 }
