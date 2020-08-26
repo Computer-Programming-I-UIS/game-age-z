@@ -53,19 +53,30 @@ class will{
     image(zombie1,xz,yz,100,100);//dibujo zombie
      }
     }
+    if(xz1>=3000){
+      imageMode(CORNER);
+      image(zombie,6000,yz1,100,100);//dibujo zombie
+    }
+    else{
      if(poswillx >= xz1){
-    xz1+= (poswillx -xz1)*0.01;// persigue will
-    yz1+= (poswilly -yz1)*0.01;//persigue will
+    xz1+= (poswillx -xz1)*0.006;// persigue will
+    yz1+= (poswilly -yz1)*0.006;//persigue will
     imageMode(CORNER);
     image(zombie,xz1,yz1,100,100);//dibujo zombie
      }
       else if(poswillx < xz1){
-     //zombie2
-    xz1+= (poswillx -xz1)*0.01;// persigue will
-    yz1+= (poswilly -yz1)*0.01;//persigue will
+     
+    xz1+= (poswillx -xz1)*0.006;// persigue will
+    yz1+= (poswilly -yz1)*0.006;//persigue will
     imageMode(CORNER);
     image(zombie1,xz1,yz1,100,100);//dibujo zombie
       }
+    }
+    if(xz2>=3000){
+      imageMode(CORNER);
+      image(zombie,6000,yz2,100,100);//dibujo zombie
+    }
+    else{
       if(poswillx >= xz2){
     //zombie3
     xz2+= (poswillx -xz2)*0.008;// persigue will
@@ -79,20 +90,27 @@ class will{
     imageMode(CORNER);
     image(zombie1,xz2,yz2,100,100);//dibujo zombie
        }
+    }
+    if(xz3>=3000){
+      imageMode(CORNER);
+      image(zombie,6000,yz3,100,100);//dibujo zombie
+    }
+    else{
     if(poswillx >= xz3){
     //zombie 4
-    xz3+= (poswillx -xz3)*0.015;// persigue will
-    yz3+= (poswilly -yz3)*0.015;//persigue will
+    xz3+= (poswillx -xz3)*0.007;// persigue will
+    yz3+= (poswilly -yz3)*0.007;//persigue will
     imageMode(CORNER);
     image(zombie,xz3,yz3,100,100);//dibujo zombie
     
     }
     else if(poswillx < xz3){
     //zombie 4
-    xz3+= (poswillx -xz3)*0.015;// persigue will
-    yz3+= (poswilly -yz3)*0.015;//persigue will
+    xz3+= (poswillx -xz3)*0.007;// persigue will
+    yz3+= (poswilly -yz3)*0.007;//persigue will
     imageMode(CORNER);
     image(zombie1,xz3,yz3,100,100);//dibujo zombie
+    }
     }
   
    
@@ -126,23 +144,40 @@ class will{
     switch(cambiosprite){
       case 1:
         image(will2,poswillx,poswilly,138,91);
-        if(keyPressed){
-          if((key=='x')||(key=='X')){
+        
+          
         fill(255,100);
         noStroke();
         
         ellipse(poswillx-300,poswilly-25, 10,10);
         ellipse(xz,yz, 10,10);
-          }
-        }
-        if ((xz<poswillx-300)&&(xz+100>poswillx-300)&&(yz<poswilly-25)&&(yz+100>poswilly-25)){
+          
+        
+        if ((xz<poswillx-300)&&(xz+100>poswillx-300)&&(yz<poswilly-25)&&(yz+100>poswilly-25)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
           xz=6000;
+        }
+        }
+        if ((xz1<poswillx-300)&&(xz1+100>poswillx-300)&&(yz1<poswilly-25)&&(yz1+100>poswilly-25)&&(keyPressed)){
+         if((key=='x')||(key=='X')){
+          xz1=6000;
+        }
+        }
+        if ((xz2<poswillx-300)&&(xz2+100>poswillx-300)&&(yz2<poswilly-25)&&(yz2+100>poswilly-25)&&(keyPressed)){
+         if((key=='x')||(key=='X')){
+          xz2=6000;
+        }
+        }
+        if ((xz3<poswillx-300)&&(xz3+100>poswillx-300)&&(yz3<poswilly-25)&&(yz3+100>poswilly-25)&&(keyPressed)){
+         if((key=='x')||(key=='X')){
+          xz3=6000;
+        }
         }
         break;
       case 2:
         image(spritewill1,poswillx,poswilly,138,91);
-        if(keyPressed){
-          if((key=='x')||(key=='X')){
+        
+          
         fill(255,100);
         
         strokeCap(ROUND);
@@ -151,32 +186,65 @@ class will{
         
          ellipse(poswillx+200,poswilly+20, 10,10);
          ellipse(xz,yz, 10,10);
-         if ((xz<poswillx+200)&&(xz+100>poswillx+200)&&(yz<poswilly)&&(yz+100>poswilly)){
-          xz=6000;
+         if ((xz<poswillx+200)&&(xz+100>poswillx+200)&&(yz<poswilly)&&(yz+100>poswilly)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz=6000;
         }
-          }
+         }
+         if ((xz1<poswillx+200)&&(xz1+100>poswillx+200)&&(yz1<poswilly)&&(yz1+100>poswilly)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz1=6000;
+        }
+         }
+         if ((xz2<poswillx+200)&&(xz2+100>poswillx+200)&&(yz2<poswilly)&&(yz2+100>poswilly)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz2=6000;
+        }
+         }
+         if ((xz3<poswillx+200)&&(xz3+100>poswillx+200)&&(yz3<poswilly)&&(yz3+100>poswilly)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz3=6000;
+        }
+          
         }
         break;
         case 3:
         image(will3,poswillx,poswilly,91,138);
-        if(keyPressed){
-          if((key=='x')||(key=='X')){
+        
+         
         fill(255,100);
         strokeCap(ROUND);
         strokeJoin(ROUND);
         noStroke();
          ellipse(poswillx+20,poswilly-300, 10,10);
          ellipse(xz,yz, 10,10);
-         if ((xz<poswillx+20)&&(xz+100>poswillx+20)&&(yz<poswilly-300)&&(yz+100>poswilly-300)){
-          xz=6000;
+         if ((xz<poswillx+20)&&(xz+100>poswillx+20)&&(yz<poswilly-300)&&(yz+100>poswilly-300)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz=6000;
         }
-          }
+         }
+         if ((xz1<poswillx+20)&&(xz1+100>poswillx+20)&&(yz1<poswilly-300)&&(yz1+100>poswilly-300)&&(keyPressed)){
+           if((key=='x')||(key=='X')){
+           xz1=6000;
         }
+         }
+         if ((xz2<poswillx+20)&&(xz2+100>poswillx+20)&&(yz2<poswilly-300)&&(yz2+100>poswilly-300)&&(keyPressed)){
+           if((key=='x')||(key=='X')){
+           xz2=6000;
+        }
+         }
+         if ((xz3<poswillx+20)&&(xz3+100>poswillx+20)&&(yz3<poswilly-300)&&(yz3+100>poswilly-300)&&(keyPressed)){
+           if((key=='x')||(key=='X')){
+           xz3=6000;
+        }
+         }
+          
+        
         break;
         case 4:
         image(will1,poswillx,poswilly,91,138);
-        if(keyPressed){
-          if((key=='x')||(key=='X')){
+        
+          
         fill(255,100);
         strokeCap(ROUND);
         strokeJoin(ROUND);
@@ -184,16 +252,34 @@ class will{
         
         ellipse(poswillx-20,poswilly+300, 10,10);
          ellipse(xz,yz, 10,10);
-         if ((xz<poswillx-20)&&(xz+100>poswillx-20)&&(yz<poswilly+300)&&(yz+100>poswilly+300)){
-          xz=6000;
+         if ((xz<poswillx-20)&&(xz+100>poswillx-20)&&(yz<poswilly+300)&&(yz+100>poswilly+300)&&(keyPressed)){
+         if((key=='x')||(key=='X')){
+           xz=6000;
         }
-          }
+         }
+         if ((xz1<poswillx-20)&&(xz1+100>poswillx-20)&&(yz1<poswilly+300)&&(yz1+100>poswilly+300)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz1=6000;
         }
+         }
+         if ((xz2<poswillx-20)&&(xz2+100>poswillx-20)&&(yz2<poswilly+300)&&(yz2+100>poswilly+300)&&(keyPressed)){
+         if((key=='x')||(key=='X')){
+           xz2=6000;
+        }
+         }
+         if ((xz3<poswillx-20)&&(xz3+100>poswillx-20)&&(yz3<poswilly+300)&&(yz3+100>poswilly+300)&&(keyPressed)){
+          if((key=='x')||(key=='X')){
+           xz3=6000;
+        }
+         }
+          
+        
         break;
+        }
     }
     //image(spritewill1,poswillx,poswilly,138,91);
-      
-  }
+
+  
   void keyPressed(){
     
     
