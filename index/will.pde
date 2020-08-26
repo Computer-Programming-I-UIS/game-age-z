@@ -11,7 +11,10 @@ class will{
   int cambiosprite =1; //variable para que cambie de sprite
   float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3;//variables zombie
   float perseguidor = 0.005;// variable para velocidad de perseguidor
-  
+  float dist1;
+  float dist2;
+  float dist3;
+  float dist4;
   
   
   will(){
@@ -281,9 +284,15 @@ class will{
 
   
   void die(){
-    ellipse(poswillx,poswilly,50,50);
-    if ((xz<=poswillx-50)&&(xz>=poswillx+50)&&){
-      
+    
+    noFill();
+    ellipse(poswillx,poswilly,90,90);
+    dist1=dist(poswillx,poswilly,xz,yz);
+    dist2=dist(poswillx,poswilly,xz1,yz1);
+    dist3=dist(poswillx,poswilly,xz2,yz2);
+    dist4=dist(poswillx,poswilly,xz3,yz3);
+    if(dist1 <= 90||dist2 <= 90||dist3 <= 90||dist4 <= 90){
+      lvl1.gaver();
     }
   }
   

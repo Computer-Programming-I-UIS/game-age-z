@@ -78,6 +78,11 @@ class fondo{
    personajemain.dibujo();
    personajemain.movimiento();
    personajemain.limite();
+   personajemain.die();
  }
-  
+  void gaver(){
+    background(muerte);
+     text("press scape to close",450,500);
+      
+  }
 }

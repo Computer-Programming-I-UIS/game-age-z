@@ -15,6 +15,7 @@ boolean botonplay = false;
 boolean botoncredi = false;
 boolean botonsalir = false;
 boolean left, right, up, down;
+PImage muerte;
 
 void setup(){
   
@@ -30,6 +31,7 @@ void setup(){
   fondo1 = loadImage("fondo1.jpg");
   zombie = loadImage("zombie.png");
   zombie1= loadImage("zombie1.png");
+  muerte= loadImage("muerte.png");
   personajemain = new will();
   lvl1 = new fondo();
   left = false;
