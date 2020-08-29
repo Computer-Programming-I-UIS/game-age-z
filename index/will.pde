@@ -9,7 +9,7 @@ class will{
  
   float w,h; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
   int cambiosprite =1; //variable para que cambie de sprite
-  float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3;//variables zombie
+  float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3,xz4,yz4;//variables zombie
   float perseguidor = 0.005;// variable para velocidad de perseguidor
   float dist1;
   float dist2;
@@ -30,6 +30,8 @@ class will{
     yz2=-500;
     xz3=-1500;
     yz3=1000;
+    xz4 =2000;
+    yz4= -7000;
   }
   
   
@@ -113,6 +115,31 @@ class will{
     yz3+= (poswilly -yz3)*0.007;//persigue will
     imageMode(CORNER);
     image(zombie1,xz3,yz3,100,100);//dibujo zombie
+    }
+    }
+    
+    if((xz>=3000)&&(xz1>=3000)&&(xz2>=3000)&&(xz3>=3000)){
+      
+      
+      if(xz4>=3000){
+      imageMode(CORNER);
+      image(zombie,6000,yz,250,250);//dibujo zombie
+    }
+    else{
+    if(poswillx >= xz4){
+    xz4+= (poswillx -xz4)*perseguidor;// persigue will
+    yz4+= (poswilly -yz4)*perseguidor;//persigue will
+    imageMode(CORNER);
+    image(zombie,xz4,yz4,250,250);//dibujo zombie
+    //zombie2
+    }
+     else if(poswillx < xz4){
+        xz4+= (poswillx -xz4)*perseguidor;// persigue will
+    yz4+= (poswilly -yz4)*perseguidor;//persigue will
+    imageMode(CORNER);
+    image(zombie1,xz4,yz4,250,250);//dibujo zombie
+     }
+      
     }
     }
   

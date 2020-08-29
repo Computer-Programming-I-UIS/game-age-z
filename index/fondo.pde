@@ -67,7 +67,7 @@ class fondo{
     text("Dawn dawns and Will does not see his family",38,ytext+n*11);
     text("hear a noise in the kitchen",38,ytext+n*12);
     text("What is happening?",40,ytext+n*14);
-    ytext=ytext-1;
+    ytext=ytext-60;
     if (ytext+n*13<-20){
       nivel1();
     }
