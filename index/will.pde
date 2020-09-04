@@ -15,6 +15,7 @@ class will{
   float dist2;
   float dist3;
   float dist4;
+  int vidaz = 20;
   
   
   will(){
@@ -173,6 +174,7 @@ class will{
     }imageMode(CENTER);
     switch(cambiosprite){
       case 1:
+      
         image(will2,poswillx,poswilly,138,91);
         
           
@@ -203,7 +205,16 @@ class will{
           xz3=6000;
         }
         }
+        if ((xz4<poswillx-300)&&(xz4+100>poswillx-300)&&(yz4<poswilly-25)&&(yz4+100>poswilly-25)&&(keyPressed)){
+          if((key=='x')||(key=='X')){ 
+           vidaz = vidaz - 1; 
+           if (vidaz == 0){
+             xz4 =6000;
+           }
+         }
+         }
         break;
+        
       case 2:
         image(spritewill1,poswillx,poswilly,138,91);
         
@@ -213,6 +224,7 @@ class will{
         strokeCap(ROUND);
         strokeJoin(ROUND);
         noStroke();
+        
         
          ellipse(poswillx+200,poswilly+20, 10,10);
          ellipse(xz,yz, 10,10);
@@ -237,6 +249,14 @@ class will{
         }
           
         }
+        if ((xz4<poswillx+200)&&(xz4+100>poswillx+200)&&(yz4<poswilly)&&(yz4+100>poswilly)&&(keyPressed)){
+          if((key=='x')||(key=='X')){ 
+           vidaz = vidaz - 1; 
+           if (vidaz == 0){
+             xz4 =6000;
+           }
+         }
+         }
         break;
         case 3:
         image(will3,poswillx,poswilly,91,138);
@@ -267,6 +287,14 @@ class will{
            if((key=='x')||(key=='X')){
            xz3=6000;
         }
+         }
+         if ((xz4<poswillx+20)&&(xz4+100>poswillx+20)&&(yz4<poswilly-300)&&(yz4+100>poswilly-300)&&(keyPressed)){
+          if((key=='x')||(key=='X')){ 
+           vidaz = vidaz - 1; 
+           if (vidaz == 0){
+             xz4 =6000;
+           }
+         }
          }
           
         
@@ -301,11 +329,18 @@ class will{
           if((key=='x')||(key=='X')){
            xz3=6000;
         }
+        if ((xz4<poswillx-20)&&(xz4+100>poswillx-20)&&(yz4<poswilly+300)&&(yz4+100>poswilly+300)&&(keyPressed)){
+          if((key=='x')||(key=='X')){ 
+           vidaz = vidaz - 1; 
+           if (vidaz == 0){
+             xz4 =6000;
+           }
+         }
          }
           
         
         break;
-        }
+        }}
     }
     //image(spritewill1,poswillx,poswilly,138,91);
 
@@ -320,7 +355,12 @@ class will{
     dist4=dist(poswillx,poswilly,xz3,yz3);
     if(dist1 <= 90||dist2 <= 90||dist3 <= 90||dist4 <= 90){
       lvl1.gaver();
+      left = false;
+      up = false;
+      down = false;
+      right = false;
     }
+    
   }
   
   

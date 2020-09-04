@@ -6,7 +6,7 @@ class fondo{
   int ycredi = 690;
   int n = 40; //space between the text 
   int c = 40; 
-   
+  boolean botonsalto = false;
    
   fondo(){  
   }
@@ -40,9 +40,12 @@ class fondo{
     text("    opengameart.org",450,ycredi+c*15);
     text("    capcom.com",450,ycredi+c*16);
     text("    devianart.com",450,ycredi+c*17);
-    ycredi=ycredi-1;
+    textSize(20);
+    text("click to back to menu",0,700);
+    ycredi=ycredi-3;
     if (ycredi+c*17<-20){
-      menu();
+      //menu();
+      ycredi=1000;
     }
   }
   
@@ -52,6 +55,7 @@ class fondo{
  
  
   void historias(){
+    int speedtext=3;
     //noCursor();
     background(historia);
     textSize(38);
@@ -67,10 +71,22 @@ class fondo{
     text("Dawn dawns and Will does not see his family",38,ytext+n*11);
     text("hear a noise in the kitchen",38,ytext+n*12);
     text("What is happening?",40,ytext+n*14);
-    ytext=ytext-60;
+    if (botonsalto){
+    speedtext=5000;
+  }else{
+  }
+    ytext=ytext-speedtext;
     if (ytext+n*13<-20){
       nivel1();
     }
+  }
+  void mousePressed(){
+    if(mouseY >= 565 && mouseY < 617 && mouseX >= 312 && mouseX < 461  ){
+      botonsalto = true;
+  }
+  else{
+    botonsalto =false;
+  }
   }
  
  void nivel1(){
@@ -81,8 +97,11 @@ class fondo{
    personajemain.die();
  }
   void gaver(){
+    left = false;
+    up = false;
+    down = false;
+    right = false;
     background(muerte);
      text("press scape to close",450,500);
-      
   }
 }
