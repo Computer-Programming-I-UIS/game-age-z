@@ -2,6 +2,7 @@ import ddf.minim.*;
 
 Minim minim;
 AudioPlayer s1;
+AudioPlayer dis;
 will personajemain; //objeto del personaje
 fondo lvl1; //objeto para dibujar fondo lvl 1
 PImage spritewill1; //primer sprite
@@ -44,6 +45,7 @@ void setup(){
   down = false;
   minim = new Minim(this);
   s1 = minim.loadFile("s1.mpeg");
+  dis = minim.loadFile("disparo.mp3");
   
 }
 void draw(){
@@ -67,7 +69,11 @@ void draw(){
   }else{
   }
   
-  
+  if(keyPressed){
+    if((key=='x')||(key=='X')){
+      dis.play();
+    }
+  }
 }
 
 void mousePressed(){
