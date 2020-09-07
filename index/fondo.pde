@@ -55,7 +55,7 @@ class fondo{
  
  
   void historias(){
-    int speedtext=3;
+    int speedtext=50;
     //noCursor();
     background(historia);
     textSize(38);

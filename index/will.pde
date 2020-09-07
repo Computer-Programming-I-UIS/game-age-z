@@ -15,6 +15,7 @@ class will{
   float dist2;
   float dist3;
   float dist4;
+  float dist5;
   int vidaz = 20;
   
   
@@ -118,27 +119,27 @@ class will{
     image(zombie1,xz3,yz3,100,100);//dibujo zombie
     }
     }
-    
+    //zombie5 
     if((xz>=3000)&&(xz1>=3000)&&(xz2>=3000)&&(xz3>=3000)){
       
       
       if(xz4>=3000){
       imageMode(CORNER);
-      image(zombie,6000,yz,250,250);//dibujo zombie
+      image(zombie,6000,yz,200,200);//dibujo zombie
     }
     else{
     if(poswillx >= xz4){
     xz4+= (poswillx -xz4)*perseguidor;// persigue will
     yz4+= (poswilly -yz4)*perseguidor;//persigue will
     imageMode(CORNER);
-    image(zombie,xz4,yz4,250,250);//dibujo zombie
+    image(zombie,xz4,yz4,200,200);//dibujo zombie
     //zombie2
     }
      else if(poswillx < xz4){
         xz4+= (poswillx -xz4)*perseguidor;// persigue will
     yz4+= (poswilly -yz4)*perseguidor;//persigue will
     imageMode(CORNER);
-    image(zombie1,xz4,yz4,250,250);//dibujo zombie
+    image(zombie1,xz4,yz4,200,200);//dibujo zombie
      }
       
     }
@@ -348,12 +349,14 @@ class will{
   void die(){
     
     noFill();
+
     ellipse(poswillx,poswilly,90,90);
-    dist1=dist(poswillx,poswilly,xz,yz);
-    dist2=dist(poswillx,poswilly,xz1,yz1);
-    dist3=dist(poswillx,poswilly,xz2,yz2);
-    dist4=dist(poswillx,poswilly,xz3,yz3);
-    if(dist1 <= 90||dist2 <= 90||dist3 <= 90||dist4 <= 90){
+    dist1=dist(poswillx,poswilly,xz+50,yz+50);
+    dist2=dist(poswillx,poswilly,xz1+50,yz1+50);
+    dist3=dist(poswillx,poswilly,xz2+50,yz2+50);
+    dist4=dist(poswillx,poswilly,xz3+50,yz3+50);
+    dist5= dist(poswillx,poswilly,xz4+100,yz4+100);
+    if(dist1 <= 90||dist2 <= 90||dist3 <= 90||dist4 <= 90||dist5<=150){
       lvl1.gaver();
       left = false;
       up = false;
@@ -401,8 +404,31 @@ class will{
     }
     
     if((poswillx<=820)&&(poswillx>750)&&(poswilly<115)){
-      
+      poswillx=822;
+    }
+    //cocina
+    if ((poswillx>412)&&(poswilly>490)&&(poswillx<505)){
+      poswillx=410;
+    }
+    if((poswillx<515)&&(poswilly>490)&&(poswillx>500)){
+      poswillx=517;
+    }
+    if((poswilly>480)&&(poswillx>413)&&(poswillx<514)){
+      poswilly=478;
     }
     
+    //sala
+    if((poswillx>1015)&&(poswilly>324)&&(poswillx<1050)&&(poswilly<445)){
+      poswillx=1013;
+    }
+    if((poswilly>323)&&(poswillx>1014)&&(poswillx<1055)&&(poswilly<434)){
+      poswilly=321;
+    }
+    if((poswillx<1059)&&(poswilly>324)&&(poswillx>1020)&&(poswilly<445)){
+      poswillx=1060;
+    }
+    if((poswilly<446)&&(poswilly>410)&&(poswillx>1016)&&(poswillx<1058)){
+      
+    }
   }
 }
