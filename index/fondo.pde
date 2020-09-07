@@ -55,7 +55,7 @@ class fondo{
  
  
   void historias(){
-    int speedtext=50;
+    int speedtext=2;
     //noCursor();
     background(historia);
     textSize(38);
@@ -71,10 +71,11 @@ class fondo{
     text("Dawn dawns and Will does not see his family",38,ytext+n*11);
     text("hear a noise in the kitchen",38,ytext+n*12);
     text("What is happening?",40,ytext+n*14);
-    if (botonsalto){
-    speedtext=5000;
-  }else{
-  }
+   if(keyPressed){
+    if((key=='s')||(key=='S')){
+      speedtext=5000;
+    }
+  }else{dis.pause();}
     ytext=ytext-speedtext;
     if (ytext+n*13<-20){
       nivel1();

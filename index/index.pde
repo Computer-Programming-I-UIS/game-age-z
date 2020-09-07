@@ -73,7 +73,7 @@ void draw(){
     if((key=='x')||(key=='X')){
       dis.play();
     }
-  }
+  }else{dis.pause();}
 }
 
 void mousePressed(){
