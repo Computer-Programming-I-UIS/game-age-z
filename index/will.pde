@@ -17,6 +17,8 @@ class will{
   float dist4;
   float dist5;
   int vidaz = 20;
+  int r=250, g=0, b=0;
+  int color1 = color(r,g,b);
   
   
   will(){
@@ -125,21 +127,46 @@ class will{
       
       if(xz4>=3000){
       imageMode(CORNER);
-      image(zombie,6000,yz,200,200);//dibujo zombie
+      if(r==250){
+    tint(color1);
+    image(zombie,xz4,yz4,200,200);//dibujo zombie
+    noTint();
+      }
+      else{
+    noTint();
+    image(zombie,xz4,yz4,200,200);
+    //zombie2
+    }
     }
     else{
     if(poswillx >= xz4){
     xz4+= (poswillx -xz4)*perseguidor;// persigue will
     yz4+= (poswilly -yz4)*perseguidor;//persigue will
     imageMode(CORNER);
+    if(r==250){
+    tint(color1);
     image(zombie,xz4,yz4,200,200);//dibujo zombie
+    noTint();
+    }
+    else{
+    noTint();
+    image(zombie,xz4,yz4,200,200);
     //zombie2
+    }
     }
      else if(poswillx < xz4){
         xz4+= (poswillx -xz4)*perseguidor;// persigue will
     yz4+= (poswilly -yz4)*perseguidor;//persigue will
     imageMode(CORNER);
+    if(r==250){
+       tint(color1);
     image(zombie1,xz4,yz4,200,200);//dibujo zombie
+    noTint();
+    }
+    else{
+       noTint();
+       image(zombie1,xz4,yz4,200,200);//dibujo zombie
+    }
      }
       
     }
@@ -208,11 +235,19 @@ class will{
         }
         if ((xz4<poswillx-300)&&(xz4+100>poswillx-300)&&(yz4<poswilly-25)&&(yz4+100>poswilly-25)&&(keyPressed)){
           if((key=='x')||(key=='X')){ 
-           vidaz = vidaz - 1; 
+            r=250;
+            
+            vidaz = vidaz - 1; 
+             
            if (vidaz == 0){
              xz4 =6000;
            }
          }
+        
+         }
+          else{
+          r=100; 
+      
          }
         break;
         
@@ -252,11 +287,19 @@ class will{
         }
         if ((xz4<poswillx+200)&&(xz4+100>poswillx+200)&&(yz4<poswilly)&&(yz4+100>poswilly)&&(keyPressed)){
           if((key=='x')||(key=='X')){ 
-           vidaz = vidaz - 1; 
+             r=250;
+            
+            vidaz = vidaz - 1; 
+          
            if (vidaz == 0){
              xz4 =6000;
            }
          }
+         
+         }
+         else{
+            r=100; 
+          
          }
         break;
         case 3:
@@ -291,11 +334,18 @@ class will{
          }
          if ((xz4<poswillx+20)&&(xz4+100>poswillx+20)&&(yz4<poswilly-300)&&(yz4+100>poswilly-300)&&(keyPressed)){
           if((key=='x')||(key=='X')){ 
+               r=250;
+        
            vidaz = vidaz - 1; 
            if (vidaz == 0){
              xz4 =6000;
            }
          }
+        
+         }
+          else{
+            r=100; 
+        
          }
           
         
@@ -332,11 +382,18 @@ class will{
         }
         if ((xz4<poswillx-20)&&(xz4+100>poswillx-20)&&(yz4<poswilly+300)&&(yz4+100>poswilly+300)&&(keyPressed)){
           if((key=='x')||(key=='X')){ 
+             r=250;
+          
            vidaz = vidaz - 1; 
            if (vidaz == 0){
              xz4 =6000;
            }
          }
+
+         }
+                  else{
+            r=100; 
+       
          }
           
         
