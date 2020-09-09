@@ -2,33 +2,35 @@ AGE Z
 ================
 
 
-`AGE Z` es un juego `TOP AND DOWN` de supervivencia.
+`AGE Z` it's a game `TOP AND DOWN` of survival.
 
 ![./Captura1.PNG](./Captura1.PNG)
+
+
+
+
+###Summary
+
+Play as Will a man devastated by what the pandemic has brought. Things get worse when one morning he realizes
+that his family is not there, noises are heard in the house. Something is not right...
 ![./Captura2.PNG](./Captura2.PNG)
+
+### characteristics
+
+-It is a "top and down" type game whose purpose is to entertain.
+
+-The objective of the game is to kill all the zombies so that will can save his family.
+
+-Will controls himself with `keyboard arrows` and shoot with the` x` key.
 ![./Captura3.PNG](./Captura3.PNG)
+
+- At the slightest contact with a zombie Will will die, so will not be near the zombies.
+
+-Will's weapon has a certain range, the zombie cannot be outside the weapon's reticule since the shot will not affect.
+
+-The map has certain areas where will not be able to walk, but the zombies if they can, which will make the game a little more difficult.
+
 ![./Captura4.PNG](./Captura4.PNG)
-
-### Resumen
-
-Encarna a Will un hombre destrozado por lo que ha traido la pandemia. La cosa empeora cuando una mañana se da cuenta
-de que su familia no está, se oyen ruidos en la casa. Algo no anda bien...
-
-### Características
-
--Es un juego tipo "top an down" cuyo fin es entretener.
-
--El objetivo del juego es matar a todos los zombies para que will pueda salvar a su familia.
-
--Will se controla con  `las flechas del teclado` y dispara con la tecla  `x`.
-
-- Al más minimo contacto con un zombie Will morira, por eso will no debe estar cerca de los zombies.
-
--El arma de will tiene cierto alcance, el zombie no puede estar fuera de la reticula del arma ya que el disparo no afectara.
-
--El mapa tiene ciertas zonas por donde will no podra caminar, pero los zombies si podran hacerlo lo que hara un poco mas dificil  el juego.
-
-
 Autores
 ----
 
@@ -36,4 +38,4 @@ Autores
 - Andres Felipe Araque Guerrero 2190443 
 
 
-**Estudiantes de Ingeniería Electrónica - Programación 1 GRUPO D2**
+**Electronic Engineering Students - Programming 1 GROUP D2 **

@@ -10,11 +10,11 @@ class will{
   float w,h; //w:ancho sprite, h:alto sprite, rotation: angulo para que rote will, speed: velocidad del caminar, maxspeed: maxima velocidad, friction: hace que el movimiento se baja desacelerando para que no ande como loco
   int cambiosprite =1; //variable para que cambie de sprite
   float xz,yz,xz1,yz1,xz2,xz3,yz2,yz3,xz4,yz4;//variables zombie
-  float perseguidor = 0.005;// variable para velocidad de perseguidor
+  float perseguidor = 0.007;// variable para velocidad de perseguidor
   float dist1;
   float dist2;
   float dist3;
-  float dist4;
+  float dist4;  
   float dist5;
   int vidaz = 300;
   int r=250, g=0, b=0;
