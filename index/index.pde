@@ -12,6 +12,7 @@ PImage zombie;
 PImage fondo1;
 PImage zombie1;
 PImage historia;
+PImage victoria;
 PImage will1;
 PImage will2;
 PImage will3;
@@ -27,7 +28,8 @@ void setup(){
   size(1280, 720);
   //imageMode(CENTER);
   spritewill1 =  loadImage("1.png");  //cargar imagen
-  spritewill2 =  loadImage("3.png");  
+  spritewill2 =  loadImage("3.png"); 
+  victoria = loadImage("fondov.png");
   will1 = loadImage("1.1.png");
   will2 = loadImage("1.2.png");
   will3 = loadImage ("1.3.png");

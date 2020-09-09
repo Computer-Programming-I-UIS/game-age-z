@@ -16,7 +16,7 @@ class will{
   float dist3;
   float dist4;
   float dist5;
-  int vidaz = 20;
+  int vidaz = 300;
   int r=250, g=0, b=0;
   int color1 = color(r,g,b);
   
@@ -179,7 +179,11 @@ class will{
   }
             
     
-  
+  void victory(){
+    if(xz4==6000){
+      background(victoria);
+    }
+  }
   
   
   void movimiento(){

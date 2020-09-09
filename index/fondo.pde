@@ -96,6 +96,7 @@ class fondo{
    personajemain.movimiento();
    personajemain.limite();
    personajemain.die();
+   personajemain.victory();
  }
   void gaver(){
     left = false;
