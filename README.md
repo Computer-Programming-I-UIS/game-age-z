@@ -4,7 +4,9 @@ AGE Z
 
 `AGE Z` it's a game `TOP AND DOWN` of survival.
 
-![./Captura1.PNG](./Captura1.PNG)
+##Trailer
+
+![./gameplay.gif](./gameplay.gif)
 
 
 
