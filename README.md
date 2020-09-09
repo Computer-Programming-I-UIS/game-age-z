@@ -4,14 +4,14 @@ AGE Z
 
 `AGE Z` it's a game `TOP AND DOWN` of survival.
 
-##Trailer
+## Trailer
 
 ![./gameplay.gif](./gameplay.gif)
 
 
 
 
-###Summary
+### Summary
 
 Play as Will a man devastated by what the pandemic has brought. Things get worse when one morning he realizes
 that his family is not there, noises are heard in the house. Something is not right...
